@@ -15,11 +15,9 @@ describe ConcatenatedReadable do
 =end
 
 	it 'finds all six letter words' do
-		expect(readable.six_letter_words.include?("albums")).to be_true
-		expect(readable.six_letter_words.include?("barely")).to be_true
-		expect(readable.six_letter_words.include?("befoul")).to be_true
-		expect(readable.six_letter_words.include?("convex")).to be_true
-		expect(readable.six_letter_words.include?("tigers")).to be_true
-		expect(readable.six_letter_words.include?("pandas")).to be_true
+		six_letter_words = readable.six_letter_words
+		%w(albums barely befoul convex tigers pandas).each do |word|
+			expect(six_letter_words.include?(word)).to be_true
+		end
 	end
 end
